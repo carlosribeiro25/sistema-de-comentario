@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Comentários</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light min-h-screen p-6">
+
+  <!-- Toggle para alternância de tema -->
+  <div class="flex justify-end mb-4">
+    <input type="checkbox" id="theme-toggle" class="hidden peer">
+    <label for="theme-toggle" class="cursor-pointer flex items-center bg-gray-300 p-2 rounded-full w-16 relative">
+      <span class="bg-white w-6 h-6 rounded-full shadow-md transition-transform peer-checked:translate-x-6"></span>
+    </label>
+  </div>
+
+  <!-- Container principal -->
+  <div class="max-w-3xl mx-auto p-6 rounded-lg shadow-md card">
+    <!-- Atividade -->
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold">Atividade de TailwindCSS</h1>
+      <p class="mt-2"></p>
+    </div>
+
+    <!-- Comentários -->
+    <div class="mb-6">
+      <h2 class="text-xl font-semibold mb-4">Comentários</h2>
+      <div class="space-y-4">
+        <!-- Comentário 1 -->
+        <div class="p-4 rounded-md border card">
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-medium">João Silva</span>
+            <span class="text-sm">16/04/2025 15:30</span>
+          </div>
+          <p>Gostei muito do sistema! Está funcional e bonito.</p>
+        </div>
+
+        <!-- Comentário 2 -->
+        <div class="p-4 rounded-md border card">
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-medium">Maria Oliveira</span>
+            <span class="text-sm">16/04/2025 15:40</span>
+          </div>
+          <p>Excelente trabalho, só falta expandir com mais funcionalidades!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulário de comentários -->
+    <div>
+      <h2 class="text-xl font-semibold mb-4">Deixe seu comentário</h2>
+      <form class="space-y-4">
+        <input type="text" placeholder="Seu nome" class="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" required>
+        <textarea rows="3" placeholder="Escreva seu comentário..." class="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" required></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+          Enviar Comentário
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Alternância de tema
+    const toggle = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    toggle.addEventListener("change", () => {
+      body.classList.toggle("light");
+      body.classList.toggle("dark");
+    });
+  </script>
+</body>
+</html>
